@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>教育论坛</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
 
-
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <script src="/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body>
@@ -21,12 +21,10 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">主页</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="https://github.com/login/oauth/authorize?client_id=6ac53c2bf1b2f9efd29a&redirect_uri=http://localhost:8088/callback&scope=user&state=1">登录</a>
-                </li>
-                <li class="nav-item dropdown" th:if>
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        我
+
+                <li class="nav-item dropdown" th:if="${session.user !=null}" >
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${session.user.getName()}">
+
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">消息中心</a></li>
@@ -34,6 +32,9 @@
                         <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="#">退出登录</a></li>
                     </ul>
+                </li>
+                <li class="nav-item" th:unless="not ${session.user ==null}">
+                    <a class="nav-link" href="https://github.com/login/oauth/authorize?client_id=6ac53c2bf1b2f9efd29a&redirect_uri=http://localhost:8088/callback&scope=user&state=1">登录</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled">Disabled</a>

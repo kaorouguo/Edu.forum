@@ -1,4 +1,4 @@
-package dto;
+package com.example.eduforum.dto;
 
 public class GitHubUser {
     private String name;

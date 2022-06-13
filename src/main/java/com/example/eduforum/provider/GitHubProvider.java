@@ -1,8 +1,8 @@
-package provider;
+package com.example.eduforum.provider;
 
 import com.alibaba.fastjson.JSON;
-import dto.AccessTokenDTO;
-import dto.GitHubUser;
+import com.example.eduforum.dto.AccessTokenDTO;
+import com.example.eduforum.dto.GitHubUser;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 
