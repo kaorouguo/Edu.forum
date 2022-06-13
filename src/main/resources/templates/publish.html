@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>教育论坛</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/forum.css">
+
+
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">教育论坛</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">主页</a>
+                </li>
+
+                <li class="nav-item dropdown" th:if="${session.user !=null}" >
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" th:text="${session.user.getName()}">
+
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#">消息中心</a></li>
+                        <li><a class="dropdown-item" href="#">个人资料</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">退出登录</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item" th:unless="not ${session.user ==null}">
+                    <a class="nav-link" href="https://github.com/login/oauth/authorize?client_id=6ac53c2bf1b2f9efd29a&redirect_uri=http://localhost:8088/callback&scope=user&state=1">登录</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled">Disabled</a>
+                </li>
+            </ul>
+
+            <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="输入您要搜索的内容" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">搜索</button>
+            </form>
+
+        </div>
+
+    </div>
+
+</nav>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" >
+            <h2><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
+            </svg> 发起</h2>
+            <hr>
+            <form action="">
+                <div class="mb-3 mt-3">
+                    <label for="title" class="form-label">简明的标题:</label>
+                    <input type="email" class="form-control" id="email" placeholder="问题标题...."name="title">
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="title" >详细内容（必填）:</label>
+                    <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+
+                </div>
+                <div class="mb-3 mt-3">
+                    <label for="title" class="form-label">添加标签:</label>
+                    <input type="tag" class="form-control" id="tag" placeholder="输入标签,以“;(eng)”隔开"name="tag">
+                </div>
+                <input type="submit" class="btn btn-success btn-publish" value="提交">
+            </form>
+
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" >
+            <h3>问题发起指南</h3>
+            • 问题标题: 请用精简的语言描述您发布的问题，不超过25字<br><br>
+            • 问题补充: 详细补充您的问题内容，并确保问题描述清晰直观, 并提供一些相关的资料：<br><br>
+            <div>       1.问题信息清晰;</div>
+            <div>       2.分享内容请标记内容分类；</div>
+            <div>       3.转载信息务必注明出处和原作者;</div>
+            <div>       4.注意阅读格式友好，问题相关学科应添加相应标签；</div><br><br>
+            • 选择标签: 选择一个或者多个合适的标签，用分号（英文状态下）隔开，每个标签不超过10个字
+        </div>
+    </div>
+</div>
+</body>
+</html>
