@@ -37,8 +37,8 @@
                 <li class="nav-item" th:unless="not ${session.user ==null}">
                     <a class="nav-link" href="https://github.com/login/oauth/authorize?client_id=6ac53c2bf1b2f9efd29a&redirect_uri=http://localhost:8088/callback&scope=user&state=1">登录</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
+                <li class="nav-item" th:if="${session.user !=null}">
+                    <a class="nav-link " href="publish.html">发布问题</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
