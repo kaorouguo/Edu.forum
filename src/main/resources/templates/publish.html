@@ -61,20 +61,22 @@
                 <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/>
             </svg> 发起</h2>
             <hr>
-            <form action="">
+            <form action="/publish" method="post">
                 <div class="mb-3 mt-3">
                     <label for="title" class="form-label">简明的标题:</label>
-                    <input type="email" class="form-control" id="email" placeholder="问题标题...."name="title">
+                    <input type="title" class="form-control" th:value="${title}" id="title" placeholder="问题标题...."name="title">
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="title" >详细内容（必填）:</label>
-                    <textarea class="form-control" name="description" id="description" cols="30" rows="10"></textarea>
+                    <label for="description" >详细内容（必填）:</label>
+                    <textarea class="form-control" th:value="${descrption}" name="description" id="description" cols="30" rows="10"></textarea>
 
                 </div>
                 <div class="mb-3 mt-3">
-                    <label for="title" class="form-label">添加标签:</label>
-                    <input type="tag" class="form-control" id="tag" placeholder="输入标签,以“;(eng)”隔开"name="tag">
+                    <label for="tag" class="form-label">添加标签:</label>
+                    <input type="tag" class="form-control" th:value="${tag}" id="tag" placeholder="输入标签,以“;(eng)”隔开"name="tag">
                 </div>
+                <span class="alert alert-danger" th:text="${error}" th:if="${error !=null}"></span>
+
                 <input type="submit" class="btn btn-success btn-publish" value="提交">
             </form>
 
