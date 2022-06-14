@@ -14,7 +14,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">教育论坛</a>
+        <a class="navbar-brand" href=/index>教育论坛</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,9 +39,7 @@
                 <li class="nav-item" th:unless="not ${session.user ==null}">
                     <a class="nav-link" href="https://github.com/login/oauth/authorize?client_id=6ac53c2bf1b2f9efd29a&redirect_uri=http://localhost:8088/callback&scope=user&state=1">登录</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                </li>
+
             </ul>
 
             <form class="d-flex" role="search">

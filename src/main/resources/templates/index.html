@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/css/bootstrap.min.css">
     <script src="https://cdn.staticfile.org/popper.js/2.9.3/umd/popper.min.js"></script>
     <script src="https://cdn.staticfile.org/twitter-bootstrap/5.1.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/forum.css">
 
 
 </head>
@@ -38,7 +39,7 @@
                     <a class="nav-link" href="https://github.com/login/oauth/authorize?client_id=6ac53c2bf1b2f9efd29a&redirect_uri=http://localhost:8088/callback&scope=user&state=1">登录</a>
                 </li>
                 <li class="nav-item" th:if="${session.user !=null}">
-                    <a class="nav-link " href="publish.html">发布问题</a>
+                    <a class="nav-link " href="/publish">发布问题</a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
@@ -48,6 +49,45 @@
         </div>
     </div>
 </nav>
+<div class="container-fluid main">
+    <div class="row">
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12" >
+            <h2> <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list-ul" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm-3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm0 4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+            </svg>
+             发现</h2>
+            <hr>
+            <!-- Media object -->
+            <div class="d-flex">
+                <!-- Image -->
+                <img
+                        src="https://mdbcdn.b-cdn.net/img/new/avatars/2.webp"
+                        alt="John Doe"
+                        class="me-3 rounded-circle"
+                        style="width: 60px; height: 60px;"
+                />
+                <!-- Body -->
+                <div>
+                    <h5 class="fw-bold">
+                        John Doe
+                        <small class="text-muted">Posted on February 19, 2021</small>
+                    </h5>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                        incididunt ut labore et dolore magna aliqua.
+                    </p>
+                </div>
+            </div>
+            <!-- Media object -->
+
+
+        </div>
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12" >
+            <h3>热门话题</h3>
+
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
